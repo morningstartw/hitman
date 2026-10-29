@@ -1,0 +1,6 @@
+{
+  "name": "Silent Contract - 2D Stealth Action",
+  "description": "A top-down 2D stealth action hitman game. Infiltrate secure compounds, neutralize guards quietly, hide bodies, and eliminate high-value targets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
