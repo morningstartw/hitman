@@ -982,9 +982,9 @@ const level5: LevelConfig = {
     { x: 1840, y: 40, w: 20, h: 1120, type: 'wall' },
 
     // Garden Hedge Maze (Bottom-Left & Center)
-    { x: 180, y: 780, w: 260, h: 40, type: 'cover' },
-    { x: 180, y: 580, w: 260, h: 40, type: 'cover' },
-    { x: 180, y: 380, w: 260, h: 40, type: 'cover' },
+    { x: 180, y: 780, w: 240, h: 40, type: 'cover' },
+    { x: 180, y: 580, w: 240, h: 40, type: 'cover' },
+    { x: 180, y: 380, w: 240, h: 40, type: 'cover' },
     { x: 480, y: 640, w: 40, h: 280, type: 'cover' },
     { x: 620, y: 420, w: 40, h: 320, type: 'cover' },
 
@@ -992,16 +992,26 @@ const level5: LevelConfig = {
     { x: 480, y: 220, w: 120, h: 120, type: 'cover' },
 
     // Villa Main Mansion (Right Half)
-    // Reception & Gallery
-    ...makeRoom(860, 60, 540, 480, 18, 'bottom', 220, 100),
-    { x: 1040, y: 220, w: 180, h: 80, type: 'cover' },
+    // Reception & Gallery (x: 860 to 1400, y: 60 to 540)
+    { x: 860, y: 60, w: 18, h: 480, type: 'wall' }, // Left perimeter wall
+    { x: 860, y: 60, w: 540, h: 18, type: 'wall' }, // Top perimeter wall
+    { x: 860, y: 522, w: 220, h: 18, type: 'wall' }, // Bottom wall left of door
+    { x: 1180, y: 522, w: 220, h: 18, type: 'wall' }, // Bottom wall right of door (Doorway: x 1080..1180)
+    { x: 1040, y: 220, w: 180, h: 80, type: 'cover' }, // Gallery display pedestals
 
-    // Ambassador Croft's Private Study (Top-Right)
-    ...makeRoom(1420, 60, 400, 440, 16, 'left', 160, 90),
-    { x: 1540, y: 180, w: 140, h: 60, type: 'cover' },
+    // Dividing Wall between Reception and Study (x: 1384..1402) with interior Grand Doorway (y: 210..330)
+    { x: 1384, y: 60, w: 18, h: 150, type: 'wall' }, // Upper dividing wall (y: 60..210)
+    { x: 1384, y: 330, w: 18, h: 192, type: 'wall' }, // Lower dividing wall (y: 330..522)
+
+    // Ambassador Croft's Private Study (x: 1402 to 1820, y: 60 to 540)
+    { x: 1402, y: 60, w: 418, h: 18, type: 'wall' }, // Top perimeter wall
+    { x: 1804, y: 60, w: 18, h: 480, type: 'wall' }, // Right perimeter wall
+    { x: 1402, y: 522, w: 138, h: 18, type: 'wall' }, // Bottom wall left of terrace door
+    { x: 1660, y: 522, w: 144, h: 18, type: 'wall' }, // Bottom wall right of terrace door (Doorway: x 1540..1660)
+    { x: 1540, y: 180, w: 140, h: 60, type: 'cover' }, // Ambassador mahogany desk
 
     // Wine Cellar Vault & Archives (Bottom-Right)
-    ...makeRoom(940, 680, 840, 440, 16, 'top', 240, 100),
+    ...makeRoom(940, 680, 840, 440, 16, 'top', 320, 110),
     // Wine barrel rows
     { x: 1080, y: 780, w: 180, h: 50, type: 'cover' },
     { x: 1080, y: 920, w: 180, h: 50, type: 'cover' },
@@ -1012,7 +1022,7 @@ const level5: LevelConfig = {
     { x: 480, y: 960, w: 50, h: 30, occupied: false, label: 'Garden Shed' },
     { x: 740, y: 220, w: 50, h: 30, occupied: false, label: 'Statue Niche' },
     { x: 1340, y: 560, w: 50, h: 30, occupied: false, label: 'Antique Wardrobe' },
-    { x: 1720, y: 720, w: 50, h: 30, occupied: false, label: 'Wine Cask' },
+    { x: 1700, y: 720, w: 50, h: 30, occupied: false, label: 'Wine Cask' },
   ],
   guards: [
     // Garden Patrol
@@ -1151,7 +1161,7 @@ const level5: LevelConfig = {
     {
       id: 'cam-gallery',
       name: 'Grand Gallery CCTV',
-      x: 1380,
+      x: 1360,
       y: 80,
       baseAngle: Math.PI / 2,
       angle: Math.PI / 2,
@@ -1166,7 +1176,7 @@ const level5: LevelConfig = {
       id: 'cam-dock',
       name: 'Lake Dock Pier CCTV',
       x: 1680,
-      y: 480,
+      y: 505,
       baseAngle: -Math.PI / 2,
       angle: -Math.PI / 2,
       sweepAngle: Math.PI / 2.5,
